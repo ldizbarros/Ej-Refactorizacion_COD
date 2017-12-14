@@ -6,37 +6,38 @@ package lovivido;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Este programa calculara los meses, dias y horas que ha vivido una persona que 
+ * se introduce por pantalla.
+ * @author ldizbarros
+ */
+
 public class LoVivido {
+/**
+ * Funcion main del programa
+ * @param args argumentos del metodo main
+ */
+    public static void main(String[] args) {
+        /**
+         * Creamos las variables nombre y edad que guardaran dichos datos 
+         * de la persona que pedimos por pantalla
+         */
+        String nombre,edad;
 
-public static void main(String[] args) {
-String n;
-String e;
-
-int m;
-int d;
-int h;
-int a;
-
-n = JOptionPane.showInputDialog ("Escriba su nombre: ");
-e = JOptionPane.showInputDialog ("Escriba su edad: ");
- 
-a = Integer.parseInt (e);
- 
-m = (a*12);
-d = (a*365);
-h = (d*24);
- 
- JOptionPane.showMessageDialog(null,  "Meses: "  +m,"Numero de meses vividos de " +n,JOptionPane.INFORMATION_MESSAGE);
-
-
- JOptionPane.showMessageDialog(null, "Días: " +d,"Numero de días vividos de "+n,JOptionPane.INFORMATION_MESSAGE);
-
-
- JOptionPane.showMessageDialog(null, "Horas: " +h,"Numero de horas vividos de "+n,JOptionPane.INFORMATION_MESSAGE);
-
-   System.exit (0);
-
-}
-   
+        nombre = JOptionPane.showInputDialog("Escriba su nombre: ");
+        edad = JOptionPane.showInputDialog("Escriba su edad: ");
+        
+        /**
+         * Instanciamos un objeto de la clase Claculos para calcular lo que ha 
+         * vivido la persona.
+         */
+        Calculos primerCalculo = new Calculos();
+        
+        /**
+         * Llamamos a la funcion calcularLoVivido y le pasamos el nombre y la edad
+         * de la persona
+         */
+        primerCalculo.calcularLoVivido(nombre, edad);
+    }
 
 }
